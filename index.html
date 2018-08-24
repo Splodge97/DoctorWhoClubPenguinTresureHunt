@@ -1,0 +1,211 @@
+<HTML>
+ <head>
+  <title> Doctor Who Club Penguin Tresure Hunt </title>
+  <style>
+      body {font-family:Verdana;}
+      select {font-family:Verdana;}
+      button {font-family:Verdana;}
+      input {font-family:Verdana;}
+  </style>
+</head>
+<body>
+    <div id="myQuestion">Madame de Pompadour was 'The Girl in the …'</div><br>
+    <input id="myAnswer" size="1">
+    <select id="myRooms">
+        <option value="pick">Select a location</option>
+        <option value="ski_hill">Ski Hill</option>
+        <option value="ski_village">Ski Village</option>
+        <option value="ski_lodge">Ski Lodge</option>
+        <option value="lodge_attic">Lodge Attic</option>
+        <option value="epf">EPF</option>
+        <option value="beach">Beach</option>
+        <option value="lighthouse">Lighthouse</option>
+        <option value="beacon">Beacon (Upstairs of Lighthouse)</option>
+        <option value="dock">Dock</option>
+        <option value="town">Town</option>
+        <option value="coffee_shop">Coffee Shop</option>
+        <option value="book_room">Book Room (Upstairs of Coffee Shop)</option>
+        <option value="nightclub">Nightclub</option>
+        <option value="dance_lounge">Dance Lounge (Upstairs of Nightclub)</option>
+        <option value="gift_shop">Gift Shop</option>
+        <option value="snow_forts">Snow Forts</option>
+        <option value="stadium">Stadium</option>
+        <option value="plaza">Plaza</option>
+        <option value="pet_shop">Pet Shop</option>
+        <option value="stage">Stage</option>
+        <option value="pizza_parlor">Pizza Parlor</option>
+        <option value="forest">Forest</option>
+        <option value="cove">Cove</option>
+        <option value="iceberg">Iceberg</option>
+        <option value="dojo">Dojo</option>
+        <option value="mine_shack">Mine Shack</option>
+        <option value="recyling_plant">Recyling Plant</option>
+        <option value="mine">Mine</option>
+        <option value="cave_mine">Cave Mine</option>
+        <option value="hidden_lake">Hidden Lake</option>
+        <option value="underground_pool">Underground Pool</option>
+        <option value="boiler_room">Boiler Rooom</option>
+    </select><br>
+    <button id="mySubmit" onclick="submit()" style="float:right">Submit</button><br>
+    <div id="myCorrect"></div>
+<script>
+var line = 1; var question=1; var score = 0; var mini_games = 0;
+setInterval(lines,100)
+function lines(){if(line==0){
+    document.getElementById("myRooms").style.visibility = "hidden";
+    document.getElementById("myAnswer").style.visibility = "visible";
+    document.getElementById("myAnswer").size="20"}
+else if(line==2)
+{document.getElementById("myAnswer").style.visibility = "hidden"; document.getElementById("mySubmit").style.visibility = "hidden"; document.getElementById("myRooms").style.visibility = "hidden"}
+else{document.getElementById("myRooms").style.visibility = "visible";
+    document.getElementById("myAnswer").style.visibility = "hidden"
+    document.getElementById("myAnswer").size="1"} }
+function submit(){
+    var x=myRooms.selectedIndex
+    if(question==1){if(x==3){one("Correct! The Girl in the Fireplace - Ski Lodge",1,2)}
+        else{one("Wrong. The Girl in the Fireplace - Ski Lodge",0,2)}
+        setTimeout(clear,2000) ;
+        setTimeout('two("Where else has fish on wall?",1)',2000)}
+    else if(question==2){if(x==7){one("Correct!",1,3)}
+        else{one("Wrong. Lighthouse",0,3)}
+        setTimeout(clear,2000) ;
+        setTimeout('two("How many fish can you catch on Ice Fishing Time Trials?",0)',2000)}
+    else if(question==3){mini_games=mini_games+(myAnswer.value/20); question=4;
+        if(myAnswer.value/20>=0.5){myCorrect.innerHTML="Well Done"; setTimeout(clear,2000)}
+        setTimeout('two("What did the Doctor come for, when he went to Amy & Rorys Wedding?",1)',100)}
+    else if(question==4){if(x==13){one("Correct! The Dancing - The Nightclub",1,5)}
+        else{one("Wrong. The Dancing - The Nightclub",0,5)}
+        setTimeout(clear,2000) ;
+        setTimeout('two("Where can the story of the Green puffle be found?",1)',2000)}
+    else if(question==5){if(x==12){one("Correct!",1,6)}
+        else{one("Wrong. Book Room",0,6)}
+        setTimeout(clear,2000) ;
+        setTimeout('two("What was the Doctor fighting when he said - You want weapons? Were in a library. Books are the best weapon in the world. This rooms the greatest arsenal we could have. Arm yourself?",0)',2000)}
+    else if(question==6){if(myAnswer.value.toLowerCase()=="werewolf"||myAnswer.value.toLowerCase()=="wolf"||myAnswer.value.toLowerCase()=="lupine wavelength haemovariform"
+    ||myAnswer.value.toLowerCase()=="lupine"||myAnswer.value.toLowerCase()=="wavelength"||myAnswer.value.toLowerCase()=="haemovariform")
+    {one("Correct! Werewolf/Lupine Wavelength Haemovariform",1,7)}
+    else{one("Wrong. Werewolf/Lupine Wavelength Haemovariform",0,7)}
+    setTimeout(clear,2000) ;
+    setTimeout('two("What is the Doctor playing in Essex 1138?",1)',2000)}
+    else if(question==7){if(x==7){one("Correct! Guitar - Band - Lighthouse",1,8)}
+        else{one("Wrong. Guitar - Band - Lighthouse",0,8)}
+        setTimeout(clear,2000) ;
+        setTimeout('two("What was the Doctor facing when on a Pirate ship?",0)',2000)}
+    else if(question==8){if(myAnswer.value.toLowerCase()=="siren"||myAnswer.value.toLowerCase()=="virtual doctor"
+    ||myAnswer.value.toLowerCase()=="virtual doctor from a spaceship"||myAnswer.value.toLowerCase()=="doctor from a spaceship")
+        {one("Correct! Siren/Virtual Doctor from a Spaceship",1,9)}
+        else{one("Wrong. Siren/Virtual Doctor from a Spaceship",0,9)}
+        setTimeout(clear,2000) ;
+        setTimeout('two("Where else has a piano?",1)',2000)}
+    else if(question==9){if(x==21){one("Correct!",1,10)}
+        else{one("Wrong. Pizza Parlor",0,10)}
+        setTimeout(clear,2000) ;
+        setTimeout('two("Here is a Fish Dish Menu on the wall But What does the Doctor eat Fish Fingers with?",0)',2000)}
+    else if(question==10){if(myAnswer.value.toLowerCase()=="custard")
+        {one("Correct!",1,11)}
+        else{one("Wrong. Custard",0,11)}
+        setTimeout(clear,2000) ;
+        setTimeout('two("How many pizzas you can make in Pizzatron 3000?",0)',2000)}
+    else if(question==11){mini_games=mini_games+(myAnswer.value/40); question=12;
+        if(myAnswer.value/40>=0.5){myCorrect.innerHTML="Well Done"; setTimeout(clear,2000)}
+        setTimeout('two("What is Amy reading at the start of The Angels Take Manhattan?",1)',100)}
+    else if(question==12){if(x==32){one("Correct! Newspaper - Boiler Room",1,13)}
+        else{one("Wrong. Newspaper - Boiler Room",0,13)}
+        setTimeout(clear,2000) ;
+        setTimeout('two("In which Doctor Who who episode was the whole ship as hot as a boiler?",0)',2000)}
+    else if(question==13){if(myAnswer.value.toLowerCase()=="forty two"||myAnswer.value=="42"||myAnswer.value.toLowerCase()=="series 3 episode 7"||myAnswer.value.toLowerCase()=="episode 184")
+        {one("Correct!",1,14)}
+        else{one("Wrong. 42",0,14)}
+        setTimeout(clear,2000) ;
+        setTimeout('two("Series 4 Episode 9 is … of the Dead",1)',2000)}
+    else if(question==14){if(x==22){one("Correct!",1,15)}
+        else{one("Wrong. Forest",0,15)}
+        setTimeout(clear,2000) ;
+        setTimeout('two("What does Wilfred have up the hill?",1)',2000)}
+    else if(question==15){if(x==8){one("Correct! Telescope - Beacon",1,16)}
+        else{one("Wrong. Telescope - Beacon",0,16)}
+        setTimeout(clear,2000) ;
+        setTimeout('two("If you complete Jet Pack Adventure where do you land?",1)',2000)}
+    else if(question==16){if(x==26){one("Correct!",1,17)}
+        else{one("Wrong. Mine Shack",0,17)}
+        setTimeout(clear,2000) ;
+        setTimeout('two("How many coins can you earn in Cart Surfer?",0)',2000)}
+    else if(question==17){mini_games=mini_games+(myAnswer.value/350); question=18;
+        if(myAnswer.value/350>=0.5){myCorrect.innerHTML="Well Done"; setTimeout(clear,2000)}
+        setTimeout('two("In Closing Time where was the Cybermens hidden door?",1)',100)}
+    else if(question==18){if(x==15){one("Correct! Changing Room - Gift Shop",1,19)}
+        else{one("Wrong. Changing Room - Gift Shop",0,19)}
+        setTimeout(clear,2000) ;
+        setTimeout('two("The Dress Up Poster is wearing are bow tie, according to the Doctor Bow ties are …",0)',2000)}
+    else if(question==19){if(myAnswer.value.toLowerCase()=="cool")
+        {one("Correct!",1,20)}
+        else{one("Wrong. Cool",0,20)}
+        setTimeout(clear,2000) ;
+        setTimeout('two("Season 8 Episode 8, Mummy on the Orient …",1)',2000)}
+    else if(question==20){if(x==1){one("Correct! Express - Sled Race - Ski Hill",1,21)}
+        else{one("Wrong. Express - Sled Race - Ski Hill",0,21)}
+        setTimeout(clear,2000) ;
+        setTimeout('two("The Doctor assured the Prince that his mother was safe aboard the TARDIS, and then realised he had the wrong …",1)',2000)}
+    else if(question==21){if(x==19){one("Correct! Gold Fish - Pet Shop",1,22)}
+        else{one("Wrong. Gold Fish - Pet Shop",0,22)}
+        setTimeout(clear,2000) ;
+        setTimeout('two("How many puffles can you capture in Puffle Roundup?",0)',2000)}
+    else if(question==22){mini_games=mini_games+(myAnswer.value/10); question=23;
+        if(myAnswer.value/10>=0.5){myCorrect.innerHTML="Well Done"; setTimeout(clear,2000)}
+        setTimeout('two("What does Wilfred reffer to the Vinvocci as?",1)',100)}
+    else if(question==23){if(x==12){one("Correct! Cactus - Book Room",1,24)}
+        else{one("Wrong. Cactus - Book Room",0,24)}
+        setTimeout(clear,2000) ;
+        setTimeout('two("Where else can the purple modern art be found?",1)',2000)}
+    else if(question==24){if(x==27){one("Correct!",1,25)}
+        else{one("Wrong. Recyling Plant",0,25)}
+        setTimeout(clear,2000) ;
+        setTimeout('two("Accoring to Amy Pond normal blokes watch telly, play … and go down ",1)',2000)}
+    else if(question==25){if(x==17){one("Correct! Football - Stadium",1,26)}
+        else{one("Wrong. Football - Stadium",0,26)}
+        setTimeout(clear,2000) ;
+        setTimeout('two("The Doctor compares the TARDIS size to a small glass of … having a large amount of sugar it in.",1)',2000)}
+    else if(question==26){if(x==14){one("Correct! Coke - Dance Lounge",1,27)}
+        else{one("Wrong. Coke - Dance Lounge",0,27)}
+        setTimeout(clear,2000) ;
+        setTimeout('two("How many levels can you complete in Thin Ice?",0)',2000)}
+    else if(question==27){mini_games=mini_games+(myAnswer.value/18); question=28;
+        if(myAnswer.value/18>=0.5){myCorrect.innerHTML="Well Done"; setTimeout(clear,2000)}
+        setTimeout('two("In The Pandorica Opens the Doctor yells Look at me, Im a …",1)',100)}
+    else if(question==28){if(x==16){one("Correct! Target - Snow Forts",1,29)}
+        else{one("Wrong. Target - Snow Forts",0,29)}
+        setTimeout(clear,2000) ;
+        setTimeout('two("Here is Club Penguins Standard Time, the Doctors time machine is the TARDIS but what does TARDIS stand for?",0)',2000)}
+    else if(question==29){if(myAnswer.value.toLowerCase()=="time and relative dimension in space")
+        {one("Correct!",1,30)}
+        else{one("Wrong. Time And Relative Dimension In Space",0,30)}
+        setTimeout(clear,2000) ;
+        setTimeout('two("In Partners in Crime what does Donna empty from the Boot her Car?",1)',2000)}
+    else if(question==30){if(x==4){one("Correct! Suitcases - Lodge Attic",1,31)}
+        else{one("Wrong. Suitcases - Lodge Attic",0,31)}
+        setTimeout(clear,2000) ;
+        setTimeout('two("This room has a crack in the wallpaper. But what was through the crack in Amys wall?",0)',2000)}
+    else if(question==31){if(myAnswer.value.toLowerCase()=="the atraxi prison"||myAnswer.value.toLowerCase()=="atraxi prison"||myAnswer.value.toLowerCase()=="prison"
+    ||myAnswer.value.toLowerCase()=="prisoner zero"||myAnswer.value.toLowerCase()=="prisoner zero's prison"||myAnswer.value.toLowerCase()=="prisoner zeros prison")
+        {one("Correct!",1,32)}
+        else{one("Wrong. The Atraxi Prison",0,32)}
+        setTimeout(clear,2000) ;
+        setTimeout('two("In The Eleventh Hour what was in the TARDISs Library?",1)',2000)}
+    else if(question==32){if(x==31){one("Correct!",1,33)}
+        else{one("Wrong. Swimming Pool",0,33)}
+        setTimeout(clear,2000) ;
+        setTimeout('two("Where else is there a life guard chair?",1)',2000)}
+    else if(question==33){if(x==23){one("Correct!",1,34)}
+        else{one("Wrong. Cove",0,34)}
+        setTimeout(clear,2000) ;
+        setTimeout('two("How far can you survive in Catchin Waves Survival?",0)',2000)}
+    else if(question==34){mini_games=mini_games+(myAnswer.value/500); question=35;
+        if(myAnswer.value/500>=0.5){myCorrect.innerHTML="Well Done"; setTimeout(clear,2000)}
+        score=(score/28)*100; mini_games=(mini_games/6)*100;
+        setTimeout('two("Well Done, You have finished the Hunt! You scored "+score+"% You also got "+mini_games+"% in the mini games!",2)',100)} }
+function one(c,s,n){myCorrect.innerHTML=c; score=score+s; question=n}
+function clear(){myAnswer.value=""; myCorrect.innerHTML=""; document.getElementById("myRooms").selectedIndex = "0"}
+function two(q,l){myQuestion.innerHTML=q; line=l}
+</script>
+</body>
+</html> 
