@@ -2,10 +2,10 @@
  <head>
   <title> Doctor Who Club Penguin Tresure Hunt </title>
   <style>
-      body {font-family:Verdana;}
-      select {font-family:Verdana;}
-      button {font-family:Verdana;}
-      input {font-family:Verdana;}
+      body {font-family:Verdana; font-size:25;}
+      select {font-family:Verdana; font-size:25;}
+      button {font-family:Verdana; font-size:25;}
+      input {font-family:Verdana; font-size:25;}
   </style>
 </head>
 <body>
@@ -44,7 +44,7 @@
         <option value="cave_mine">Cave Mine</option>
         <option value="hidden_lake">Hidden Lake</option>
         <option value="underground_pool">Underground Pool</option>
-        <option value="boiler_room">Boiler Rooom</option>
+        <option value="boiler_room">Boiler Room</option>
     </select><br>
     <button id="mySubmit" onclick="submit()" style="float:right">Submit</button><br>
     <div id="myCorrect"></div>
@@ -65,14 +65,14 @@ function submit(){
     if(question==1){if(x==3){one("Correct! The Girl in the Fireplace - Ski Lodge",1,2)}
         else{one("Wrong. The Girl in the Fireplace - Ski Lodge",0,2)}
         setTimeout(clear,2000) ;
-        setTimeout('two("Where else has fish on wall?",1)',2000)}
-    else if(question==2){if(x==7){one("Correct!",1,3)}
-        else{one("Wrong. Lighthouse",0,3)}
-        setTimeout(clear,2000) ;
         setTimeout('two("How many fish can you catch on Ice Fishing Time Trials?",0)',2000)}
-    else if(question==3){mini_games=mini_games+(myAnswer.value/20); question=4;
+    else if(question==2){mini_games=mini_games+(myAnswer.value/20); question=3;
         if(myAnswer.value/20>=0.5){myCorrect.innerHTML="Well Done"; setTimeout(clear,2000)}
-        setTimeout('two("What did the Doctor come for, when he went to Amy & Rorys Wedding?",1)',100)}
+        setTimeout('two("Where else has fish on wall?",1)',100)}
+    else if(question==3){if(x==7){one("Correct!",1,4)}
+        else{one("Wrong. Lighthouse",0,4)}
+        setTimeout(clear,2000) ;
+        setTimeout('two("What did the Doctor come for, when he went to Amy & Rorys Wedding?",1)',2000)}
     else if(question==4){if(x==13){one("Correct! The Dancing - The Nightclub",1,5)}
         else{one("Wrong. The Dancing - The Nightclub",0,5)}
         setTimeout(clear,2000) ;
@@ -117,7 +117,7 @@ function submit(){
         {one("Correct!",1,14)}
         else{one("Wrong. 42",0,14)}
         setTimeout(clear,2000) ;
-        setTimeout('two("Series 4 Episode 9 is … of the Dead",1)',2000)}
+        setTimeout('two("In Series 8 Episode 10 what covers all of London and the rest of the world?",1)',2000)}
     else if(question==14){if(x==22){one("Correct!",1,15)}
         else{one("Wrong. Forest",0,15)}
         setTimeout(clear,2000) ;
@@ -129,7 +129,7 @@ function submit(){
     else if(question==16){if(x==26){one("Correct!",1,17)}
         else{one("Wrong. Mine Shack",0,17)}
         setTimeout(clear,2000) ;
-        setTimeout('two("How many coins can you earn in Cart Surfer?",0)',2000)}
+        setTimeout('two("Go down to the Mine and see how many coins can you earn in Cart Surfer?",0)',2000)}
     else if(question==17){mini_games=mini_games+(myAnswer.value/350); question=18;
         if(myAnswer.value/350>=0.5){myCorrect.innerHTML="Well Done"; setTimeout(clear,2000)}
         setTimeout('two("In Closing Time where was the Cybermens hidden door?",1)',100)}
@@ -201,8 +201,8 @@ function submit(){
         setTimeout('two("How far can you survive in Catchin Waves Survival?",0)',2000)}
     else if(question==34){mini_games=mini_games+(myAnswer.value/500); question=35;
         if(myAnswer.value/500>=0.5){myCorrect.innerHTML="Well Done"; setTimeout(clear,2000)}
-        score=(score/28)*100; mini_games=(mini_games/6)*100;
-        setTimeout('two("Well Done, You have finished the Hunt! You scored "+score+"% You also got "+mini_games+"% in the mini games!",2)',100)} }
+        score=(score/28)*100,0; mini_games=(mini_games/6)*100;
+        setTimeout('two("Well Done, You have finished the Hunt!"+"<br>"+"You scored "+score.toFixed(0)+"%."+"<br>"+"You also got "+mini_games.toFixed(0)+"% in the mini games!",2)',100)} }
 function one(c,s,n){myCorrect.innerHTML=c; score=score+s; question=n}
 function clear(){myAnswer.value=""; myCorrect.innerHTML=""; document.getElementById("myRooms").selectedIndex = "0"}
 function two(q,l){myQuestion.innerHTML=q; line=l}
