@@ -12,7 +12,7 @@
         <preference name="loglevel" value="DEBUG" />
         <preference name="AndroidPersistentFileLocation" value="Compatibility" />
         <preference name="orientation" value="default"/>
-        <preference name="android-targetSdkVersion" value="28" />
+        <preference name="android-targetSdkVersion" value="23" />
     <name>Doctor Who Club Penguin Tresure Hunt</name>
     <description>
 Doctor Who Themed Treasure Hunt Across Club Penguin
