@@ -3,7 +3,16 @@
         xmlns:gap   = "http://phonegap.com/ns/1.0"
         id          = "doctorwhoclubpenguintresurehunt.splodge97.edu.mit.scratch"
         versionCode = "10" 
-        version     = "1.0.2" >
+        version     = "1.0.3" >
+       <access origin="*" />
+        <preference name="KeepRunning" value="false" />
+        <preference name="DisallowOverscroll" value="true"/>
+        <preference name="Fullscreen" value="true" />
+        <preference name="SplashScreenDelay" value="3000" />
+        <preference name="loglevel" value="DEBUG" />
+        <preference name="AndroidPersistentFileLocation" value="Compatibility" />
+        <preference name="orientation" value="default"/>
+        <preference name="android-targetSdkVersion" value="28" />
     <name>Doctor Who Club Penguin Tresure Hunt</name>
     <description>
 Doctor Who Themed Treasure Hunt Across Club Penguin
